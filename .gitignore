@@ -1,0 +1,11 @@
+__pycache__
+.vscode
+assets
+build
+expected
+out
+*.dol
+*.rel
+*.exe
+*.dll
+build.ninja

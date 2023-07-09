@@ -1,0 +1,26 @@
+path: orig/dol/main.dol
+r13: 0x80579440
+r2: 0x8057E9C0
+section_defs:
+  text:
+    - name: .init
+    - name: .text
+  data:
+    - name: extab_
+      attr: a
+    - name: extabindex_
+      attr: a
+    - name: .ctors
+      balign: 0
+    - name: .dtors
+      balign: 0
+    - name: .rodata
+    - name: .data
+    - name: .sdata
+    - name: .sdata2
+  bss:
+    - name: .sbss
+    - name: .sbss2
+      bss_forced_size: 0x60
+      nobits: true
+    - name: .bss

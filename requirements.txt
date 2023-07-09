@@ -1,0 +1,5 @@
+# Project
+ninja_syntax
+
+# ppcdis
+-r ./tools/ppcdis/requirements.txt
