@@ -1,0 +1,6 @@
+just a quick note of ppcdis commands ive used:
+
+dissasm splitting: ranges are [inclusive, exclusive)
+tools/ppcdis/disassembler.py config/dol.yml build/labels.pickle build/relocs.pickle asm/FILE_NAME.s -s START_ADDR END_ADDR -m config/sym
+bols.yml 
+
