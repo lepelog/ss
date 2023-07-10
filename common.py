@@ -150,7 +150,7 @@ def load_from_yaml(path: str, default=None):
 ################
 
 # Directory for decompiled dol code
-DOL_SRCDIR = "src/dol"
+DOL_SRCDIR = "src"
 
 # Directory for decompiled rel code
 REL_SRCDIR = "src/rels"
@@ -160,6 +160,9 @@ BUILDDIR = "build"
 
 # Build include directory
 BUILD_INCDIR = f"{BUILDDIR}/include"
+
+# Inlcude Directory
+INCDIR = "include"
 
 # Output binaries directory
 OUTDIR = "out"
@@ -215,7 +218,7 @@ AS = os.path.join(DEVKITPPC, "bin", "powerpc-eabi-as")
 OBJDUMP = os.path.join(DEVKITPPC, "bin", "powerpc-eabi-objdump")
 CPP = os.path.join(DEVKITPPC, "bin", "powerpc-eabi-cpp")
 
-# ICONV = f"{PYTHON} tools/sjis.py" # TODO: get actual iconv working(?)
+ICONV = f"{PYTHON} tools/sjis.py" # TODO: get actual iconv working(?)
 # NLZSS = f"{PYTHON} tools/lzss3.py"
 
 #########
@@ -279,6 +282,7 @@ DOL_FULL = f"{OUTDIR}/dol.s"
 
 ASFLAGS = ' '.join([
     "-m gekko",
+    f"-I {INCDIR}",
     f"-I {PPCDIS_INCDIR}",
     f"-I orig"
 ])
@@ -293,38 +297,36 @@ MWCC_INCLUDES = ' '.join(f"-i {d}" for d in INCDIRS)
 GCC_INCLUDES = ' '.join(f"-I {d}" for d in INCDIRS)
 
 DEFINES = [
-    # "DECOMP",
-    # "SPM_EU0"
+    "DECOMP",
 ]
 MWCC_DEFINES = ' '.join(f"-d {d}" for d in DEFINES)
 GCC_DEFINES = ' '.join(f"-D {d}" for d in DEFINES)
 
 CPPFLAGS = ' '.join([
-    "-nostdinc",
-    "-RTTI off",
-    "-Cpp_exceptions off",
-    "-fp hard",
-    "-proc gecko",
-    GCC_DEFINES,
-    GCC_INCLUDES
+    f"-I {INCDIR}",
+    f"-I {PPCDIS_INCDIR}",
+    f"-I {BUILD_INCDIR}",
+    # "-nostdinc",
+    # "-RTTI off",
+    # "-Cpp_exceptions off",
+    # "-fp hard",
+    # "-proc gecko",
+    # GCC_DEFINES,
+    # GCC_INCLUDES
 ])
 
 DOL_SDATA2_SIZE = 4
 # REL_SDATA2_SIZE = 0
 
 CFLAGS = [
-    # "-enc SJIS",
+    "-nodefaults",
     "-lang c++",
-    "-W all",
-    # "-fp hard",
     "-Cpp_exceptions off",
     "-O4",
+    "-fp hard",
+    "-inline auto",
     "-enum int",
-    # "-use_lmw_stmw on",
-    # "-str pool",
-    # "-rostr",
-    # "-sym dwarf-2",
-    # "-ipa file",
+    "-str reuse",
     MWCC_DEFINES
 ]
 BASE_DOL_CFLAGS = CFLAGS + [
@@ -340,11 +342,14 @@ BASE_DOL_CFLAGS = CFLAGS + [
 # ]
 
 LOCAL_CFLAGS = [
-    "-nostdinc",
     "-proc gekko",
+    "-nostdinc",
+    "-RTTI off",
     "-maxerrors 1",
     "-I-",
-    MWCC_INCLUDES
+    f"-i {INCDIR}",
+    f"-i {PPCDIS_INCDIR}",
+    f"-i {BUILD_INCDIR}"
 ]
 DOL_CFLAGS = ' '.join(BASE_DOL_CFLAGS + LOCAL_CFLAGS)
 # REL_CFLAGS = ' '.join(BASE_REL_CFLAGS + LOCAL_CFLAGS)
@@ -352,11 +357,10 @@ EXTERNAL_DOL_CFLAGS = ' '.join(BASE_DOL_CFLAGS)
 # EXTERNAL_REL_CFLAGS = ' '.join(BASE_REL_CFLAGS)
 
 LDFLAGS = ' '.join([
-    "-proc gekko "
     "-fp hard",
-    # "-linkmode moreram",
-    # "-maxerrors 1",
-    # "-mapunused"
+    "-nodefaults",
+    "-maxerrors 1",
+    "-mapunused"
 ])
 
 PPCDIS_ANALYSIS_FLAGS = ' '.join([

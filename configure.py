@@ -105,7 +105,7 @@ n.variable("ld", c.LD)
 n.variable("devkitppc", c.DEVKITPPC)
 n.variable("as", c.AS)
 n.variable("cpp", c.CPP)
-# n.variable("iconv", c.ICONV)
+n.variable("iconv", c.ICONV)
 n.newline()
 
 ##############
@@ -247,11 +247,11 @@ n.rule(
     description = "LD $out",
 )
 
-# n.rule(
-#     "iconv",
-#     command = "$iconv $in $out",
-#     description = "iconv $in",
-# )
+n.rule(
+    "iconv",
+    command = "$iconv $in $out",
+    description = "iconv $in",
+)
 
 # ##########
 # # Assets #

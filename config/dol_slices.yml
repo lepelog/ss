@@ -1,0 +1,6 @@
+# d/d_base.cpp:
+#   .text: [0x80050800 ,0x80050a20]
+#   .sbss: [0x805750c0, 0x805750d0]
+
+# f/f_base.cpp:
+#   .text: [0x802e12f0, 0x802e2680]

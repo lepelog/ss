@@ -1,0 +1,12 @@
+forced_types:
+  0x80096d10: FUNCTION # bte::GKI_send_msg
+  0x801b2f70: FUNCTION # Global::getEventFlowFileNameByIndex
+  0x8023bcb0: FUNCTION # Global::checkInsectCaptureGameState
+  0x8023bcd0: FUNCTION # Global::checkMinigameStatePumpkinCarry
+  0x8023bd40: FUNCTION # Global::checkMinigameHouseCleaning
+  0x8023bd60: FUNCTION # Global::checkTrialTimeAttackMinigameState
+  0x8023bd90: FUNCTION # Global::checkPumpkinClayShootingMinigameState
+  0x8023bdb0: FUNCTION # Global::checkHarpPlayingMinigameState
+  0x802dec00: FUNCTION # sLib::chase
+  0x802dec70: FUNCTION # sLib::chase
+  0x802decd0: FUNCTION # sLib::chase

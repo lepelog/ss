@@ -22,5 +22,4 @@ section_defs:
     - name: .sbss
     - name: .sbss2
       bss_forced_size: 0x60
-      nobits: true
     - name: .bss
