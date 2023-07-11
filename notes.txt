@@ -1,0 +1,3 @@
+This is just a place where i can put thoughts down while working:
+
+Create script to automatically split asm based on region (simply using the first command in the common_commands doc)

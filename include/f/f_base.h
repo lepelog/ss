@@ -13,6 +13,7 @@
 
 // Ghidra: fBase
 //   size: 0x64
+// official name
 class fBase_c {
 public:
     /* 0x00 */ fBaseID_e        mUniqueID;

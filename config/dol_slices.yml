@@ -4,3 +4,18 @@
 
 # f/f_base.cpp:
 #   .text: [0x802e12f0, 0x802e2680]
+
+# d/a/d_a_base.cpp
+#   .text: [0x8002c3a0, 0x8002de40]
+
+# UNK_FILE ( deals with arc access )
+#   .text: [0x8002de40, 0x8002def0]
+
+# d/a/obj/d_a_obj_base.cpp
+#   .text: [0x8002def0, 0x8002f300]
+
+# d/a/en/d_a_en_base.cpp
+#   .text: [0x8002f300, ]
+
+# d/a/npc/d_a_npc.cpp
+#   .text: [0x80032440, 0x8003f720]

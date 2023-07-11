@@ -56,6 +56,88 @@ global:
   0x80575bb0: sLoadAsyncCallback__7fBase_c
   0x80575bb4: sUnloadCallback__7fBase_c
 
+  # d_a_base.cpp
+  0x8002c3a0: ActorBase__createHeap
+  0x8002c3b0: ActorBase__ctor
+  0x8002c530: dBase____dt
+  0x8002c590: ActorBase__dtor
+  0x8002c650: Global__setTempCreateParams
+  0x8002c690: FUN_8002c690
+  0x8002c710: Global__initAllocatorWork1Heap
+  0x8002c720: ActorBase__initAllocator
+  0x8002c7b0: Global__addActorToRoom
+  0x8002c840: FUN_8002c840
+  0x8002c860: ActorBase__init
+  0x8002c870: ActorBase__init2
+  0x8002c880: ActorBase__create
+  0x8002c8f0: ActorBase__postCreate
+  0x8002c940: ActorBase__preDelete
+  0x8002cb10: ActorBase__preExecutre
+  0x8002cc10: ActorBase__execute
+  0x8002cca0: ActorBase__update
+  0x8002ccb0: ActorBase__updateInEvent
+  0x8002ccc0: ActorBase__postExecute
+  0x8002ce90: FUN_8002ce90
+  0x8002cea0: FUN_8002cea0
+  0x8002ceb0: ActorBase__restorePosRotFromCopy
+  0x8002cf10: Global__itemDroppingAndGivingRelated
+  0x8002cf90: ActorBase__fillUpperParams2Byte
+  0x8002cfa0: Global__getParams2_ignoreLower
+  0x8002cfb0: setParams2Lower
+  0x8002cfc0: getParams2Upper
+  0x8002cfd0: setParams2Upper
+  0x8002cff0: buildParams2
+  0x8002d010: ActorBase__getParams2Lower
+  0x8002d020: Global__FindActor
+  0x8002d0a0: FUN_8002d0a0
+  0x8002d130: FUN_8002d130
+  0x8002d190: ActorBase__getXZAngleToPlayer
+  0x8002d1d0: FUN_8002d1d0
+  0x8002d290: FUN_8002d290
+  0x8002d3e0: ActorBase__isWithinPlayerRadius
+  0x8002d440: FUN_8002d440
+  0x8002d470: ActorBase__getDistToPlayer
+  0x8002d4a0: ActorBase__getSquareDistToPlayer
+  0x8002d4b0: ActorBase__updateRoomId
+  0x8002d540: Global__isRoomFlags_6not0
+  # seemingly grouped (all calls to one field)
+  0x8002d590: FUN_8002d590
+  0x8002d5b0: FUN_8002d5b0
+  0x8002d5d0: Global__playSound2
+  0x8002d600: FUN_8002d600
+  0x8002d630: FUN_8002d630
+  0x8002d6d0: FUN_8002d6d0
+  0x8002d710: ActorBase__playSoundEffect1
+  0x8002d740: FUN_8002d740
+  0x8002d770: FUN_8002d770
+  0x8002d7a0: FUN_8002d7a0
+  0x8002d7d0: FUN_8002d7d0
+  0x8002d7f0: FUN_8002d7f0
+  0x8002d810: FUN_8002d810
+  0x8002d830: FUN_8002d830
+  0x8002d860: FUN_8002d860
+  0x8002d880: FUN_8002d880
+  0x8002d890: FUN_8002d890
+
+  0x8002d920: Global__setActorRef
+  0x8002d930: ActorBase__setEnemyDefeatFlag
+  0x8002d940: FUN_8002d940 #paried with fun below
+  0x8002d960: FUN_8002d960
+  0x8002d980: Global__actorSpawnAtActor
+  0x8002da80: dAcBase_c__createBase
+  0x8002db80: FUN_8002db80
+  0x8002db90: FUN_8002db90
+  0x8002dba0: defaultInteraction__9dAcBase_cFl
+  0x8002dc20: FUN_8002dc20
+  0x8002dc50: ActorBase__incrementEnemyKillCounter
+  0x8002dcd0: FUN_8002dcd0
+  0x8002dd10: ActorEnemyBase__handleDeath
+  0x8002dd50: ActorEnemyBase__killEnemy
+  0x8002dd90: FUN_8002dd90
+  0x8002ddd0: FUN_8002ddd0
+  0x8002de30: FUN_8002de30
+  
+
   # d_base.cpp
   0x80050800: __ct__7dBase_cFv
   0x80050860: postDraw__7dBase_cFQ27fBase_c12MAIN_STATE_e
@@ -320,36 +402,6 @@ global:
   0x80029590: EffectManager__ctor
   0x800296f0: EffectManager__dtor
   0x8002b6b0: Global__initEffectsThingsMaybe
-  0x8002c3a0: Global__Actor_no_model
-  0x8002c3b0: ActorBase__ctor
-  0x8002c530: dBase____dt
-  0x8002c590: ActorBase__dtor
-  0x8002c650: Global__setMoreActorRelatedParams
-  0x8002c710: Global__allocateActorWork1Heap
-  0x8002c7b0: Global__addActorToRoom
-  0x8002c880: ActorBase__init
-  0x8002c8f0: ActorBase__postInit
-  0x8002c940: ActorBase__onDeath
-  0x8002cb10: ActorBase__preUpdate
-  0x8002cc10: ActorBase__baseUpdate
-  0x8002ccb0: ActorBase__updateInEvent
-  0x8002cf10: Global__itemDroppingAndGivingRelated
-  0x8002cf90: ActorBase__setUpperParams2Byte
-  0x8002cfa0: Global__getParams2_andSetLower
-  0x8002d010: ActorBase__getParams2Lower
-  0x8002d020: Global__FindActor
-  0x8002d190: ActorBase__getXZAngleToLink
-  0x8002d3e0: ActorBase__checkXZDistanceFromLink
-  0x8002d4a0: ActorBase__getSquaredLinkDistance
-  0x8002d540: Global__isRoomFlags_6not0
-  0x8002d5d0: Global__playSound2
-  0x8002d710: ActorBase__playSoundEffect1
-  0x8002d920: Global__setSpawnWithRef
-  0x8002d930: ActorBase__setEnemyDefeatFlag
-  0x8002d980: Global__actorSpawnAtActor
-  0x8002dc50: ActorBase__incrementEnemyKillCounter
-  0x8002dd10: ActorEnemyBase__handleDeath
-  0x8002dd50: ActorEnemyBase__killEnemy
   0x8002de40: Global__getDataFromOarc3
   0x8002de80: Global__getOarcModelBrres
   0x8002de90: Global__getBrresFromOarc

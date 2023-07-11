@@ -5,6 +5,7 @@
 
 // Ghidra: ActorBaseBase
 //   size: 0x68
+// non-official but likely name
 class dBase_c : public fBase_c, public cOwnerSetMg_c {
 public:
     undefined4 baseProperties; // field from profile init
@@ -12,9 +13,9 @@ public:
     /* 80050800 */ dBase_c();
 
     /* 80050890 */ virtual int preExecute();
-    /* 800508f0 */ virtual void postExecute(MAIN_STATE_e status);
+    /* 800508f0 */ virtual void postExecute(MAIN_STATE_e state);
     /* 80050920 */ virtual int preDraw();
-    /* 80050860 */ virtual void postDraw(MAIN_STATE_e status);
+    /* 80050860 */ virtual void postDraw(MAIN_STATE_e state);
 
     /* 8002c530 */ virtual ~dBase_c();
 
