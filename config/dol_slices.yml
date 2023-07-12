@@ -5,17 +5,44 @@
 # f/f_base.cpp:
 #   .text: [0x802e12f0, 0x802e2680]
 
-# d/a/d_a_base.cpp
+# d/a/d_a_base.cpp:
 #   .text: [0x8002c3a0, 0x8002de40]
 
 # UNK_FILE ( deals with arc access )
 #   .text: [0x8002de40, 0x8002def0]
 
-# d/a/obj/d_a_obj_base.cpp
+# d/a/obj/d_a_obj_base.cpp:
 #   .text: [0x8002def0, 0x8002f300]
 
-# d/a/en/d_a_en_base.cpp
+# d/a/en/d_a_en_base.cpp:
 #   .text: [0x8002f300, ]
 
-# d/a/npc/d_a_npc.cpp
+# d/a/npc/d_a_npc.cpp:
 #   .text: [0x80032440, 0x8003f720]
+
+# lib/egg/core/eggAllocator.cpp:
+#   .text: [0x804952d0, 0x804953f0]
+#   .data: [0x8056e8d0, 0x8056e8e8] # Allocator vtable
+#   .sdata2: [0x8057f2f0, 0x8057f2f8] # MEMAllocator func table
+
+# lib/egg/core/eggHeap.cpp:
+#   .text: [0x804953f0, 0x80495ab0]
+#   .data: [0x8056e8e8, 0x8056e980]
+
+# lib/egg/core/eggExpHeap.cpp:
+#   .text: [0x80495ab0, 0x80495fa0]
+
+# lib/egg/core/eggFrmHeap.cpp:
+#   .text: [0x80495fa0, 0x804963a0]
+
+# lib/egg/core/eggAssetHeap.cpp:
+#   .text: [0x804963a0, 0x80496830]
+
+# lib/egg/core/eggDisposer.cpp:
+#   .text: [0x80496830, 0x80496910]
+
+# lib/egg/core/eggThread.cpp
+#   .text: [0x80496910, 0x80496de0]
+
+# lib/egg/core/eggSystem.cpp
+#   .text: [0x80496de0, ]

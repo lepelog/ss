@@ -1,0 +1,118 @@
+.include "macros.inc"
+
+.section .text
+
+.global FUN_804952d0
+.type FUN_804952d0, @function
+FUN_804952d0:
+/* 804952D0 7C651B78 */ mr          r5, r3
+/* 804952D4 80630004 */ lwz         r3, 4(r3)
+/* 804952D8 80A50008 */ lwz         r5, 8(r5)
+/* 804952DC 81830000 */ lwz         r12, 0(r3)
+/* 804952E0 818C0014 */ lwz         r12, 0x14(r12)
+/* 804952E4 7D8903A6 */ mtctr       r12
+/* 804952E8 4E800420 */ bctr        
+/* 804952EC 00000000 */ .4byte      0x00000000
+.size FUN_804952d0, . - FUN_804952d0
+
+
+.global FUN_804952f0
+.type FUN_804952f0, @function
+FUN_804952f0:
+/* 804952F0 80630004 */ lwz         r3, 4(r3)
+/* 804952F4 81830000 */ lwz         r12, 0(r3)
+/* 804952F8 818C0018 */ lwz         r12, 0x18(r12)
+/* 804952FC 7D8903A6 */ mtctr       r12
+/* 80495300 4E800420 */ bctr        
+/* 80495304 00000000 */ .4byte      0x00000000
+/* 80495308 00000000 */ .4byte      0x00000000
+/* 8049530C 00000000 */ .4byte      0x00000000
+.size FUN_804952f0, . - FUN_804952f0
+
+
+.global MEMInitAllocatorForExpHeap
+.type MEMInitAllocatorForExpHeap, @function
+MEMInitAllocatorForExpHeap:
+/* 80495310 38C20930 */ addi        r6, 0, "MEMInitAllocatorForExpHeap__FP12MEMAllocatorP12MEMiHeapHeadi@sAllocatorFunc"@sda21
+/* 80495314 38000000 */ li          r0, 0x0
+/* 80495318 90C30000 */ stw         r6, 0(r3)
+/* 8049531C 90A30004 */ stw         r5, 4(r3)
+/* 80495320 90830008 */ stw         r4, 8(r3)
+/* 80495324 9003000C */ stw         r0, 0xc(r3)
+/* 80495328 4E800020 */ blr         
+/* 8049532C 00000000 */ .4byte      0x00000000
+.size MEMInitAllocatorForExpHeap, . - MEMInitAllocatorForExpHeap
+
+
+.global __ct__Q23EGG9AllocatorFPQ23EGG4Heapl
+.type __ct__Q23EGG9AllocatorFPQ23EGG4Heapl, @function
+__ct__Q23EGG9AllocatorFPQ23EGG4Heapl:
+/* 80495330 9421FFF0 */ stwu        r1, -0x10(r1)
+/* 80495334 7C0802A6 */ mflr        r0
+/* 80495338 3CC08057 */ lis         r6, __vt__Q23EGG9Allocator@ha
+/* 8049533C 90010014 */ stw         r0, 0x14(r1)
+/* 80495340 7C802378 */ mr          r0, r4
+/* 80495344 38C6E8D0 */ addi        r6, r6, __vt__Q23EGG9Allocator@l
+/* 80495348 93E1000C */ stw         r31, 0xc(r1)
+/* 8049534C 7C7F1B78 */ mr          r31, r3
+/* 80495350 90830014 */ stw         r4, 0x14(r3)
+/* 80495354 7CA42B78 */ mr          r4, r5
+/* 80495358 90A30018 */ stw         r5, 0x18(r3)
+/* 8049535C 7C050378 */ mr          r5, r0
+/* 80495360 90C30010 */ stw         r6, 0x10(r3)
+/* 80495364 4BFFFFAD */ bl          MEMInitAllocatorForExpHeap
+/* 80495368 7FE3FB78 */ mr          r3, r31
+/* 8049536C 83E1000C */ lwz         r31, 0xc(r1)
+/* 80495370 80010014 */ lwz         r0, 0x14(r1)
+/* 80495374 7C0803A6 */ mtlr        r0
+/* 80495378 38210010 */ addi        r1, r1, 0x10
+/* 8049537C 4E800020 */ blr         
+.size __ct__Q23EGG9AllocatorFPQ23EGG4Heapl, . - __ct__Q23EGG9AllocatorFPQ23EGG4Heapl
+
+
+.global __dt__Q23EGG9AllocatorFv
+.type __dt__Q23EGG9AllocatorFv, @function
+__dt__Q23EGG9AllocatorFv:
+/* 80495380 9421FFF0 */ stwu        r1, -0x10(r1)
+/* 80495384 7C0802A6 */ mflr        r0
+/* 80495388 2C030000 */ cmpwi       r3, 0x0
+/* 8049538C 90010014 */ stw         r0, 0x14(r1)
+/* 80495390 93E1000C */ stw         r31, 0xc(r1)
+/* 80495394 7C7F1B78 */ mr          r31, r3
+/* 80495398 41820010 */ beq-        lbl_804953a8
+/* 8049539C 2C040000 */ cmpwi       r4, 0x0
+/* 804953A0 40810008 */ ble-        lbl_804953a8
+/* 804953A4 4BBBFB3D */ bl          Global__operator_delete
+lbl_804953a8:
+/* 804953A8 7FE3FB78 */ mr          r3, r31
+/* 804953AC 83E1000C */ lwz         r31, 0xc(r1)
+/* 804953B0 80010014 */ lwz         r0, 0x14(r1)
+/* 804953B4 7C0803A6 */ mtlr        r0
+/* 804953B8 38210010 */ addi        r1, r1, 0x10
+/* 804953BC 4E800020 */ blr         
+.size __dt__Q23EGG9AllocatorFv, . - __dt__Q23EGG9AllocatorFv
+
+
+.global alloc__Q23EGG9AllocatorFUl
+.type alloc__Q23EGG9AllocatorFUl, @function
+alloc__Q23EGG9AllocatorFUl:
+/* 804953C0 7C651B78 */ mr          r5, r3
+/* 804953C4 7C832378 */ mr          r3, r4
+/* 804953C8 80850018 */ lwz         r4, 0x18(r5)
+/* 804953CC 80A50014 */ lwz         r5, 0x14(r5)
+/* 804953D0 48000190 */ b           EGG__Heap__alloc
+/* 804953D4 00000000 */ .4byte      0x00000000
+/* 804953D8 00000000 */ .4byte      0x00000000
+/* 804953DC 00000000 */ .4byte      0x00000000
+.size alloc__Q23EGG9AllocatorFUl, . - alloc__Q23EGG9AllocatorFUl
+
+
+.global free__Q23EGG9AllocatorFPv
+.type free__Q23EGG9AllocatorFPv, @function
+free__Q23EGG9AllocatorFPv:
+/* 804953E0 7C651B78 */ mr          r5, r3
+/* 804953E4 7C832378 */ mr          r3, r4
+/* 804953E8 80850014 */ lwz         r4, 0x14(r5)
+/* 804953EC 480003D4 */ b           EGG__Heap__free
+.size free__Q23EGG9AllocatorFPv, . - free__Q23EGG9AllocatorFPv
+

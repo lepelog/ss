@@ -1,6 +1,7 @@
 global:
 
 # f_base.cpp
+    # .text
   0x802e12f0: __ct__7fBase_cFv
   0x802e1480: __dt__7fBase_cFv
   0x802e1500: commonPack__7fBase_cFM7fBase_cFPCvPv_iM7fBase_cFPCvPv_iM7fBase_cFPCvPvQ27fBase_c12MAIN_STATE_e_v
@@ -23,20 +24,14 @@ global:
   0x802e1b90: deleteReady__7fBase_cFv
   0x802e1ba0: connectProc__7fBase_cFv
   0x802e1e00: deleteRequest__7fBase_cFv
-
-  # resolve
-  0x802e1e80: addNewActorToDrawList
-  0x802e1f10: getFirstActor
-  0x802e1f30: getNextActor
-
+  0x802e1e80: addNewActorToDrawList # give proper symbol
+  0x802e1f10: getFirstActor # give proper symbol
+  0x802e1f30: getNextActor # give proper symbol
   0x802e1f90: getConnectParent__7fBase_cCFv
   0x802e1fb0: getConnectChild__7fBase_cCFv
   0x802e1fd0: getConnectBrNext__7fBase_cCFv
-
-  # resolve
-  0x802e1ff0: FUN_802e1ff0
-  0x802e2090: addActorToRoom
-
+  0x802e1ff0: FUN_802e1ff0 # give proper symbol
+  0x802e2090: addActorToRoom # give proper symbol
   0x802e20e0: entryFrmHeap__7fBase_cFUlPQ23EGG4Heap
   0x802e22e0: entryFrmHeapNonAdjust__7fBase_cFUlPQ23EGG4Heap
   0x802e23a0: createHeap__7fBase_cFv
@@ -49,14 +44,13 @@ global:
   0x802e2560: fBase_make__7fBase_cFUsP9fTrNdBa_cUlUc
   0x802e2600: createChild__7fBase_cFUsP7fBase_cUlUc
   0x802e2640: createRoot__7fBase_cFUsUlUc
+  0x802e2660: fBase_c__sinit # give proper symbol
+    # .sbss
+  0x80575bb0: sLoadAsyncCallback__7fBase_c # label
+  0x80575bb4: sUnloadCallback__7fBase_c # label
 
-  # resolve
-  0x802e2660: fBase_c__sinit
-
-  0x80575bb0: sLoadAsyncCallback__7fBase_c
-  0x80575bb4: sUnloadCallback__7fBase_c
-
-  # d_a_base.cpp
+  # d_a_base.cpp -- Give Proper Symbols Eventually
+    # .text
   0x8002c3a0: ActorBase__createHeap
   0x8002c3b0: ActorBase__ctor
   0x8002c530: dBase____dt
@@ -136,9 +130,11 @@ global:
   0x8002dd90: FUN_8002dd90
   0x8002ddd0: FUN_8002ddd0
   0x8002de30: FUN_8002de30
+    # .data
+  0x80501544: ActorBase__vtable
   
-
-  # d_base.cpp
+# d_base.cpp
+    # .text
   0x80050800: __ct__7dBase_cFv
   0x80050860: postDraw__7dBase_cFQ27fBase_c12MAIN_STATE_e
   0x80050890: preExecute__7dBase_cFv
@@ -151,11 +147,27 @@ global:
   0x800509e0: initLoader__7dBase_cFv
   0x80050a00: createBase__7dBase_cFUsP7dBase_cUlUc
   0x80050a10: createRoot__7dBase_cFUsUlUc
+    # .sbss
   0x805750c0: ACTOR_SHOULD_UPDATE_FLAGS__7dBase_c
   0x805750c4: ACTOR_SHOULD_DRAW_FLAGS__7dBase_c
   0x805750c8: ACTOR_SHOULD_UNK_FLAGS__7dBase_c
 
-  # These symbols will need fixing eventually
+# lib/egg/core/eggAllocator
+    # .text
+  0x804952d0: FUN_804952d0 # pfAlloc 
+  0x804952f0: FUN_804952f0 # pfFree  
+  0x80495310: MEMInitAllocatorForExpHeap
+  0x80495330: __ct__Q23EGG9AllocatorFPQ23EGG4Heapl
+  0x80495380: __dt__Q23EGG9AllocatorFv
+  0x804953c0: alloc__Q23EGG9AllocatorFUl
+  0x804953e0: free__Q23EGG9AllocatorFPv
+    # .data
+  0x8056e8d0: __vt__Q23EGG9Allocator
+    # .sdata2
+  0x8057f2f0: MEMInitAllocatorForExpHeap__FP12MEMAllocatorP12MEMiHeapHeadi@sAllocatorFunc
+
+# Imported Symbols
+# These symbols will need fixing eventually
   0x80000000: Global__Game_Code
   0x80000004: Global__Maker_code
   0x80000006: Global__Disc_number
@@ -7131,11 +7143,6 @@ global:
   0x80494dd0: EGG__StreamDecompLRC__decomp
   0x804952b0: EGG__StreamDecompLZ__getUncompressedSize
   0x804952c0: EGG__StreamDecompLZ__getHeaderSize
-  0x80495310: Global__MEMInitAllocatorForExpHeap
-  0x80495330: EGG__Allocator____ct
-  0x80495380: Allocator__dt
-  0x804953c0: Allocator__alloc
-  0x804953e0: Allocator__free
   0x804953f0: EGG__Heap__initialize
   0x80495430: EGG__Heap____ct
   0x804954c0: EGG__Heap____dt

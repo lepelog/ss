@@ -35,4 +35,18 @@ typedef double f64;
 typedef volatile f32 vf32;
 typedef volatile f64 vf64;
 
+// taken from mkw
+#ifdef __cplusplus
+#define restrict
+
+class NonCopyable {
+public:
+  inline NonCopyable() {}
+
+private:
+  inline NonCopyable(const NonCopyable&) {}
+};
+#endif
+
+
 #endif
